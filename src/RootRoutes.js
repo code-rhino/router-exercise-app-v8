@@ -10,7 +10,7 @@ function RootRoutes() {
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/users/:userId" element={<User />} />
+        <Route path="/user/:userId" element={<User />} />
         <Route path="*" element={<NoMatch />} />
     </Routes>
   )
