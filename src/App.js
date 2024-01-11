@@ -2,20 +2,11 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Link,
-  Route,
-  Routes,
 } from "react-router-dom";
-import NoMatch from "./NoMatch";
-import UserProfile from "./UserProfile";
-
-function Home() {
-  return <p>Home</p>;
-}
-
-function About() {
-  return <p>About</p>;
-}
-
+import BackButton from "./BackButton";
+import ForwardButton from "./ForwardButton";
+import GoHomeButton from "./GoHomeButton";
+import RootRoutes from "./RootRoutes";
 
 function App() {
   const userId = [1, 2, 3, 4, 5];
@@ -23,7 +14,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Link to="/">Home</Link>
+        <BackButton />
+        <ForwardButton />
+        <GoHomeButton />
         <Link to="/about">About</Link>
         <br />
         <h1>Navbar</h1>
@@ -34,12 +27,7 @@ function App() {
             </div>
           ))}
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/user/:userId" element={<UserProfile />} />
-          <Route path="*" element={<NoMatch/>}/>
-        </Routes>
+        <RootRoutes />
       </div>
     </Router>
   );
